@@ -123,6 +123,18 @@ public class CalculadoraTest {
         Assert.assertTrue(resultado==valor_esperado);
     }
     
+      /*
+    * Test que verifica si se realizo la multiplicacion por 0
+    */
+     @Test
+    public void pruebaMulti0(){
+        System.out.println("iniciando prueba multiplicacion por 0 ");
+        Calculadora c = new Calculadora();
+        int resultado = c.multiplicacion(0,-3);
+        int valor_esperado = 0;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+    
     
     
 }
