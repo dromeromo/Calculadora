@@ -87,7 +87,41 @@ public class CalculadoraTest {
         Assert.assertTrue(resultado==valor_esperado);
     }
     
+        /*
+    * Test que verifica si se realizo la multiplicacion de dos numeros positivos 
+    */
+     @Test
+    public void pruebaMultiPos(){
+        System.out.println("iniciando prueba multiplicacion de numeros positivos");
+        Calculadora c = new Calculadora();
+        int resultado = c.multiplicacion(2,3);
+        int valor_esperado = 6;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
     
+         /*
+    * Test que verifica si se realizo la multiplicacion de dos numeros negativos 
+    */
+     @Test
+    public void pruebaMultiNeg(){
+        System.out.println("iniciando prueba multiplicacion de numeros negativos");
+        Calculadora c = new Calculadora();
+        int resultado = c.multiplicacion(-2,-3);
+        int valor_esperado = 6;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+    
+    /*
+    * Test que verifica si se realizo la multiplicacion de dos numeros positivo y negativo 
+    */
+     @Test
+    public void pruebaMultiPosNeg(){
+        System.out.println("iniciando prueba multiplicacion de numeros positivo y negativo ");
+        Calculadora c = new Calculadora();
+        int resultado = c.multiplicacion(2,-3);
+        int valor_esperado = -6;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
     
     
     
