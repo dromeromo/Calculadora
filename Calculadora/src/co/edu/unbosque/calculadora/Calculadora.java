@@ -29,6 +29,11 @@ public class Calculadora {
         int resultado =(i*i0);
         return resultado;
     }
+
+    public int division(int i, int i0) {
+       int resultado =(i/i0);
+       return resultado;
+    }
     
     
     

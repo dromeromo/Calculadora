@@ -134,6 +134,37 @@ public class CalculadoraTest {
         int valor_esperado = 0;
         Assert.assertTrue(resultado==valor_esperado);
     }
+     /*
+    * Test que verifica si se realizo la division con numeros positivos
+    */
+    @Test
+    public void pruebaDiviPos(){
+        System.out.println("iniciando prueba division positiva ");
+        Calculadora c = new Calculadora();
+        int resultado = c.division(40,4);
+        int valor_esperado = 10;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+        /*
+    * Test que verifica si se realizo la división de dos numeros positivo y negativo 
+    */
+        @Test
+    public void pruebaDiviNeg(){
+        System.out.println("iniciando prueba division negativa ");
+        Calculadora c = new Calculadora();
+        int resultado = c.division(-40,-4);
+        int valor_esperado = 10;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+    
+            @Test
+    public void pruebaDiviPosNeg(){
+        System.out.println("iniciando prueba division con numeros positivos y negativos");
+        Calculadora c = new Calculadora();
+        int resultado = c.division(-40,4);
+        int valor_esperado = -10;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
     
     
     
