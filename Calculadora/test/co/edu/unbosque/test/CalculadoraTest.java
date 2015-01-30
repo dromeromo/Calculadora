@@ -5,7 +5,7 @@
  */
 package co.edu.unbosque.test;
 
-import co.edu.unbosque.calculadora.Calculadora;
+import co.edu.unbosque.calculadora.Operadores;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,7 +21,7 @@ public class CalculadoraTest {
     */
     public void pruebaSumPositivos(){
         System.out.println("iniciando prueba suma de positivos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.suma(2,3);
         int valor_esperado = 5;
         Assert.assertTrue(resultado==valor_esperado);
@@ -33,7 +33,7 @@ public class CalculadoraTest {
     */
     public void pruebaSumNegativo(){
         System.out.println("iniciando prueba suma de negativos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.suma(-2,-3);
         int valor_esperado = -5;
         Assert.assertTrue(resultado==valor_esperado);
@@ -45,7 +45,7 @@ public class CalculadoraTest {
     */
     public void pruebaSumPosNeg(){
         System.out.println("iniciando prueba suma de positivos y negativos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.suma(2,-3);
         int valor_esperado = -1;
         Assert.assertTrue(resultado==valor_esperado);
@@ -57,7 +57,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaRestaPositivos(){
         System.out.println("iniciando prueba Resta de positivos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.resta(2,3);
         int valor_esperado = -1;
         Assert.assertTrue(resultado==valor_esperado);
@@ -69,7 +69,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaRestaNegativos(){
         System.out.println("iniciando prueba Resta de numeros negativos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.resta(-2,-3);
         int valor_esperado = 1;
         Assert.assertTrue(resultado==valor_esperado);
@@ -81,7 +81,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaRestaPostNeg(){
         System.out.println("iniciando prueba Resta de numeros postivo y negativo");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.resta(2,-3);
         int valor_esperado = 5;
         Assert.assertTrue(resultado==valor_esperado);
@@ -93,7 +93,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaMultiPos(){
         System.out.println("iniciando prueba multiplicacion de numeros positivos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.multiplicacion(2,3);
         int valor_esperado = 6;
         Assert.assertTrue(resultado==valor_esperado);
@@ -105,7 +105,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaMultiNeg(){
         System.out.println("iniciando prueba multiplicacion de numeros negativos");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.multiplicacion(-2,-3);
         int valor_esperado = 6;
         Assert.assertTrue(resultado==valor_esperado);
@@ -117,7 +117,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaMultiPosNeg(){
         System.out.println("iniciando prueba multiplicacion de numeros positivo y negativo ");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.multiplicacion(2,-3);
         int valor_esperado = -6;
         Assert.assertTrue(resultado==valor_esperado);
@@ -129,7 +129,7 @@ public class CalculadoraTest {
      @Test
     public void pruebaMulti0(){
         System.out.println("iniciando prueba multiplicacion por 0 ");
-        Calculadora c = new Calculadora();
+        Operadores c = new Operadores();
         int resultado = c.multiplicacion(0,-3);
         int valor_esperado = 0;
         Assert.assertTrue(resultado==valor_esperado);
@@ -140,30 +140,44 @@ public class CalculadoraTest {
     @Test
     public void pruebaDiviPos(){
         System.out.println("iniciando prueba division positiva ");
-        Calculadora c = new Calculadora();
-        int resultado = c.division(40,4);
+        Operadores c = new Operadores();
+         c.division(40,4);
         int valor_esperado = 10;
-        Assert.assertTrue(resultado==valor_esperado);
+        Assert.assertTrue(c.getResultado()==valor_esperado);
     }
         /*
-    * Test que verifica si se realizo la división de dos numeros positivo y negativo 
+    * Test que verifica si se realizo la división de dos numeros negativos  
     */
         @Test
     public void pruebaDiviNeg(){
         System.out.println("iniciando prueba division negativa ");
-        Calculadora c = new Calculadora();
-        int resultado = c.division(-40,-4);
+        Operadores c = new Operadores();
+        c.division(-40,-4);
         int valor_esperado = 10;
-        Assert.assertTrue(resultado==valor_esperado);
+        Assert.assertTrue(c.getResultado()==valor_esperado);
     }
-    
+            /*
+    * Test que verifica si se realizo la división de dos numeros positivo y negativo 
+    */
             @Test
     public void pruebaDiviPosNeg(){
         System.out.println("iniciando prueba division con numeros positivos y negativos");
-        Calculadora c = new Calculadora();
-        int resultado = c.division(-40,4);
+        Operadores c = new Operadores();
+        c.division(40,-4);
         int valor_esperado = -10;
-        Assert.assertTrue(resultado==valor_esperado);
+        Assert.assertTrue(c.getResultado()==valor_esperado);
+    }
+    
+    /*
+    * Test que verifica si se realizo la division por 0
+    */
+    @Test
+    public void pruebaDivi0(){
+        System.out.println("iniciando prueba division con 0");
+        Operadores c = new Operadores();
+        c.division(-40,0);
+         Assert.assertTrue(c.getResultado()==0);
+      
     }
     
     
