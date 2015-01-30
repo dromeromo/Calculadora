@@ -51,6 +51,44 @@ public class CalculadoraTest {
         Assert.assertTrue(resultado==valor_esperado);
     }
     
+    /*
+    * Test que verifica si se realizo la resta de positivos dos numeros positivos
+    */
+     @Test
+    public void pruebaRestaPositivos(){
+        System.out.println("iniciando prueba Resta de positivos");
+        Calculadora c = new Calculadora();
+        int resultado = c.resta(2,3);
+        int valor_esperado = -1;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+    
+    /*
+    * Test que verifica si se realizo la resta de negativos dos numeros negativos
+    */
+     @Test
+    public void pruebaRestaNegativos(){
+        System.out.println("iniciando prueba Resta de numeros negativos");
+        Calculadora c = new Calculadora();
+        int resultado = c.resta(-2,-3);
+        int valor_esperado = 1;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+    
+     /*
+    * Test que verifica si se realizo la resta de dos numeros positivo y negativo 
+    */
+     @Test
+    public void pruebaRestaPostNeg(){
+        System.out.println("iniciando prueba Resta de numeros postivo y negativo");
+        Calculadora c = new Calculadora();
+        int resultado = c.resta(2,-3);
+        int valor_esperado = 5;
+        Assert.assertTrue(resultado==valor_esperado);
+    }
+    
+    
+    
     
     
 }
